@@ -1,0 +1,103 @@
+Bloodstained: Ritual of the Night Mod for OpenMW
+===================================================
+
+INSTALLATION INSTRUCTIONS
+
+This mod adds weapons and enemies from Bloodstained: Ritual of the Night to OpenMW (Morrowind).
+
+PREREQUISITES:
+- OpenMW 0.47 or later
+- Morrowind game files (Morrowind.esm, Tribunal.esm, Bloodmoon.esm)
+
+INSTALLATION METHOD 1: Copy to Data Files
+----------------------------------------
+1. Copy the entire BloodstainedMod folder to your OpenMW Data Files directory:
+   
+   On Linux: ~/.config/openmw/data/Data Files/
+   On Windows: C:\\Users\\<YourName>\\AppData\\Local\\OpenMW\\data\\Data Files\\
+   Or wherever your OpenMW Data Files folder is located
+
+2. In OpenMW Launcher:
+   - Go to the "Data Files" or "Content" tab
+   - Check "BloodstainedMod.esp" in the list
+   - Make sure it's loaded AFTER Morrowind.esm, Tribunal.esm, and Bloodmoon.esm
+   - Click "Apply" and then "Play"
+
+INSTALLATION METHOD 2: Separate Data Folder (Recommended)
+------------------------------------------------------
+1. Create or use an existing data folder for your mods
+2. Copy BloodstainedMod folder to that location
+3. Edit openmw.cfg (usually in ~/.config/openmw/ on Linux or in OpenMW folder on Windows):
+   
+   Add a line like:
+   data="path/to/your/mods/BloodstainedMod"
+   
+   Or use the OpenMW Launcher to add a data folder
+4. Enable BloodstainedMod.esp in the Content list
+
+ADDING ASSETS (Meshes and Textures)
+-----------------------------------
+This mod includes placeholder entries for weapons and creatures, but NO actual meshes or textures.
+You need to add .nif files and .dds textures for the mod to display properly.
+
+Weapons (place in Meshes/bloodstained/weapons/):
+- valmanway.nif
+- adrasteia.nif
+- enc_orchid.nif
+- redbeast.nif
+- mistilteinn.nif
+
+Creatures (place in Meshes/bloodstained/creatures/):
+- hellhound.nif
+- bloodless.nif
+- gremory.nif
+- alkahest.nif
+- andrealphus.nif
+
+Textures (place in Textures/bloodstained/weapons/ and Textures/bloodstained/creatures/):
+- Corresponding .dds files for each mesh
+
+CREATING ASSETS:
+- Use Blender with PyNifly plugin to export .nif files
+- Use NifSkope to edit existing Morrowind meshes as templates
+- Textures should be DDS format (BC1/BC3/BC7 compression)
+- Use the same node structure as Morrowind weapons/creatures
+
+EDITING THE MOD:
+---------------
+To customize weapon stats, creature stats, or add more content:
+
+1. Open BloodstainedMod.esp in OpenMW-CS (OpenMW Construction Set)
+2. Edit the existing records or add new ones
+3. Save the ESP file
+4. Validate with tes3cmd: tes3cmd check BloodstainedMod.esp
+
+VALIDATION:
+----------
+Before using the mod in-game, validate it:
+
+  tes3cmd check BloodstainedMod.esp
+
+This will report any issues with the plugin.
+
+TROUBLESHOOTING:
+---------------
+If weapons don't appear:
+- Check that BloodstainedMod.esp is enabled in OpenMW Launcher
+- Check that it's loaded after the master files
+- Check that the meshes and textures are in the correct locations
+- Check the OpenMW log for errors
+
+If the game crashes on startup:
+- The ESP file may have errors. Validate with tes3cmd
+- Try disabling other mods to check for conflicts
+
+CREDITS:
+--------
+- Bloodstained: Ritual of the Night - Koei Tecmo Games / ArtPlay
+- OpenMW - OpenMW Team
+- Weapon and enemy concepts from Bloodstained Wiki
+
+LICENSE:
+-------
+This mod is released under the MIT License.
